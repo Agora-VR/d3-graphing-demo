@@ -205,22 +205,22 @@ getDataSets(globalSets, weatherDetailSets)
             .attr("d", line2(x, w.copy().range([focusHeight - focusMargin.bottom, 4])));
     });
 
-    // const legendLeft = focusMargin.left + 4,
-    //     legendTop = focusHeight - 2;
+    const legendLeft = focusMargin.left + 4,
+        legendTop = focusHeight - 2;
 
-    // dataSets.forEach(({ticker, color}, index) => {
-    //     filterSvg.append("circle")
-    //         .attr("cx", legendLeft + 50 * index)
-    //         .attr("cy", legendTop - 4)
-    //         .attr("r", 4)
-    //         .style("fill", color);
-    //     filterSvg.append("text")
-    //         .attr("x", legendLeft + 6 + 50 * index)
-    //         .attr("y", legendTop)
-    //         .text(ticker)
-    //         .style("font-size", "10px")
-    //         .attr("alignment-baseline", "middle");
-    // });
+    dataSets.forEach(({ticker, color}, index) => {
+        filterSvg.append("circle")
+            .attr("cx", legendLeft + 50 * index)
+            .attr("cy", legendTop - 4)
+            .attr("r", 4)
+            .style("fill", color);
+        filterSvg.append("text")
+            .attr("x", legendLeft + 6 + 50 * index)
+            .attr("y", legendTop)
+            .text(ticker)
+            .style("font-size", "10px")
+            .attr("alignment-baseline", "middle");
+    });
 
     // Create rectangles for each range
     const graphRects = rectRanges.map(() =>
